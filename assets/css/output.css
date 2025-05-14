@@ -27,7 +27,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-2xs: 18rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
     --container-md: 28rem;
@@ -335,9 +334,6 @@
   .z-\[9999\] {
     z-index: 9999;
   }
-  .col-span-2 {
-    grid-column: span 2 / span 2;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -421,6 +417,9 @@
   }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-16 {
+    margin-bottom: calc(var(--spacing) * 16);
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
@@ -667,6 +666,9 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
+  .max-w-fit {
+    max-width: fit-content;
+  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -684,9 +686,6 @@
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
-  }
-  .min-w-2xs {
-    min-width: var(--container-2xs);
   }
   .min-w-\[8rem\] {
     min-width: 8rem;
@@ -818,6 +817,9 @@
   }
   .list-inside {
     list-style-position: inside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
   }
   .list-disc {
     list-style-type: disc;
@@ -1374,6 +1376,9 @@
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
   }
   .pl-6 {
     padding-left: calc(var(--spacing) * 6);
