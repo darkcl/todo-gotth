@@ -1,0 +1,59 @@
+package todo
+
+import (
+	"github.com/axzilla/templui/component/table"
+	"github.com/axzilla/templui/component/button"
+	"github.com/axzilla/templui/icon"
+	"fmt"
+)
+
+templ TodosView(todo []Todo) {
+	<div id="todo-content" hx-indicator="#todo-loading">
+		@table.Table() {
+			@table.Caption() {
+				A list of your todos.
+			}
+
+			@table.Header() {
+				@table.Row() {
+					@table.Head() {
+						Title
+					}
+					@table.Head() {
+						Description
+					}
+					@table.Head() {
+						Completed?
+					}
+				}
+			}
+
+			@table.Body() {
+				for _, todo := range todo {
+					@table.Row(table.RowProps{
+						ID: fmt.Sprintf("todo-%v", todo.ID),
+					}) {
+						@table.Cell() {
+							{ todo.Title }
+						}
+						@table.Cell() {
+							{ todo.Description }
+						}
+						@table.Cell() {
+							@button.Button(button.Props{
+								Size:	"icon",
+								Variant: button.VariantOutline,
+							},) {
+								if todo.Completed {
+									@icon.Check()
+								} else {
+									@icon.X()
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	</div>
+}

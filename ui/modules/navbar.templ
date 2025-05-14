@@ -1,0 +1,15 @@
+package modules
+
+type NavbarProps struct {
+	LeftNavItems templ.Component
+}
+
+templ Navbar(props NavbarProps) {
+	<nav class="border-b py-3">
+		<div class="container mx-auto px-4 flex justify-end">
+			@props.LeftNavItems
+
+			@ThemeSwitcher()
+		</div>
+	</nav>
+}
